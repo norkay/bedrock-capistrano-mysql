@@ -3,13 +3,13 @@ lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
-  spec.name          = 'capistrano-composer'
-  spec.version       = '0.0.6'
-  spec.authors       = ['Scott Walkinshaw', 'Peter Mitchell']
-  spec.email         = ['scott.walkinshaw@gmail.com', 'peterjmit@gmail.com']
-  spec.description   = %q{Composer support for Capistrano 3.x}
-  spec.summary       = %q{Composer support for Capistrano 3.x}
-  spec.homepage      = 'https://github.com/capistrano/composer'
+  spec.name          = 'bedrock-capistrano-mysql'
+  spec.version       = '0.0.1'
+  spec.authors       = ['Fredrik Sundström']
+  spec.email         = ['fredrik.sundstrom@norkay.se']
+  spec.description   = %q{MySQL tasks for roots/bedrock, using Capistrano 3.x}
+  spec.summary       = %q{MySQL tasks for roots/bedrock, using Capistrano 3.x}
+  spec.homepage      = 'https://github.com/norkay/bedrock-capistrano-mysql'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files`.split($/)

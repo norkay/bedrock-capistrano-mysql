@@ -8,7 +8,7 @@ Add this line to your application's Gemfile:
 
 ```ruby
 gem 'capistrano', '~> 3.1.0'
-gem 'capistrano-composer'
+gem 'bedrock-capistrano-mysql'
 ```
 
 And then execute:
@@ -17,7 +17,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install capistrano-composer
+    $ gem install bedrock-capistrano-mysql
 
 ## Usage
 
