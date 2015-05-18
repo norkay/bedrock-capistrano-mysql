@@ -1,4 +1,4 @@
-namespace :composer do
+namespace :mysql do
   desc <<-DESC
     Installs composer.phar to the shared directory
     In order to use the .phar file, the composer command needs to be mapped:
