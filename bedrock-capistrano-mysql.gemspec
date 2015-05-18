@@ -17,4 +17,5 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_dependency 'capistrano', '>= 3.0.0.pre'
+  spec.add_dependency 'dotenv', '>= 2.0.1'
 end
