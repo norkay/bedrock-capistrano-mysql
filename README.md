@@ -26,11 +26,14 @@ Require the module in your `Capfile`:
 require 'bedrock-capistrano-mysql'
 ```
 
-`bedrock-capistrano-mysql` comes with one task:
+`bedrock-capistrano-mysql` comes with five tasks:
 
 * mysql:backup
+* mysql:download
+* mysql:change_url
+* mysql:import
 
-The `mysql:backup` task will backup your database to your shared-folder. It will keep the five latest backups.
+The `mysql:backup` task will backup your database to your shared-folder. It will keep the five latest backups. `mysql:download` downloads the file to your local project folder. `mysql:change_url` does a search and replace for the domain. `mysql:import` imports it into your dev database and `mysql:sync` does everything, in this order.
 
 ## Contributing
 

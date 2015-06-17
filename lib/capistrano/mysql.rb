@@ -16,7 +16,9 @@ namespace(:mysql) do
   task :download    => :before
   task :change_url  => :before
   task :import      => :before
-  task :sync        => [:backup, :download, :change_url, :import]
+
+  desc "Sync MySQL Database"
+  task :sync => [:backup, :download, :import, :change_url]
 
   desc "Backup MySQL Database"
   task :backup do
@@ -44,8 +46,8 @@ namespace(:mysql) do
   desc "Change the urls in the MySQL backup file"
   task :change_url do
     on roles(:db) do
-      change_urls_in_file("etc/db_backups/remote.sql", REMOTE_ENV['WP_HOME'], LOCAL_ENV['WP_HOME'])
-      puts "Changed urls in file!"
+      system "cd ..; cd #{LOCAL_ENV['VAGRANT_PATH']}; vagrant ssh -c 'cd /srv/www/#{LOCAL_ENV['VAGRANT_APP_FOLDER']}/current; wp search-replace \'#{REMOTE_ENV['WP_HOME']}\' \'#{LOCAL_ENV['WP_HOME']}\''"
+      puts "Changed urls!"
     end
   end
 
@@ -75,12 +77,6 @@ end
 def get_latest_backup_filename(path)
   filename = capture "cd #{path}; ls -t | awk '{printf(\"%s\", $0); exit}'"
   filename
-end
-
-def change_urls_in_file(filename, replace, with)
-  text = File.read(filename)
-  new_contents = text.gsub(replace, with)
-  File.open(filename, "w") {|file| file.puts new_contents }
 end
 
 def local_mysql_credentials
