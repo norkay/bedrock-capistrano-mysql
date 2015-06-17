@@ -46,7 +46,7 @@ namespace(:mysql) do
   desc "Change the urls in the MySQL backup file"
   task :change_url do
     on roles(:db) do
-      system "cd ..; cd #{LOCAL_ENV['VAGRANT_PATH']}; vagrant ssh -c 'cd /srv/www/#{LOCAL_ENV['VAGRANT_APP_FOLDER']}/current; wp search-replace \'#{REMOTE_ENV['WP_HOME']}\' \'#{LOCAL_ENV['WP_HOME']}\''"
+      system "cd ..; cd #{LOCAL_ENV['VAGRANT_PATH']}; vagrant ssh -c 'cd /srv/www/#{LOCAL_ENV['VAGRANT_SITE_NAME']}/current; wp search-replace \'#{REMOTE_ENV['WP_HOME']}\' \'#{LOCAL_ENV['WP_HOME']}\''"
       puts "Changed urls!"
     end
   end

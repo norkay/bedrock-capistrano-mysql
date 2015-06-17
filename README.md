@@ -16,6 +16,13 @@ Or install it yourself as:
 
     $ gem install bedrock-capistrano-mysql
 
+You need to add two lines to your local .env file:
+
+```
+VAGRANT_PATH=~/path-to-bedrock-ansible
+VAGRANT_SITE_NAME=site-name
+```
+
 You also need to add the line VAGRANT_PATH to your local .env file, pointing to your local `bedrock-ansible` project. You also to keep an .env-file for each environment. Meaning you need .env for your local environment, and one for each additional environment you want to work with – i.e. .env.staging, .env.production and so on...
 
 ## Usage
