@@ -94,5 +94,5 @@ def local_mysql_database
 end
 
 def import_local_mysql_database(filename)
-  system "cd ..; cd #{LOCAL_ENV['VAGRANT_PATH']}; vagrant ssh -c 'mysql #{local_mysql_credentials} -D #{local_mysql_database} < /srv/www/#{fetch(:application)}/current/#{filename}'"
+  system "cd ..; cd #{LOCAL_ENV['VAGRANT_PATH']}; vagrant ssh -c 'mysql #{local_mysql_credentials} -D #{local_mysql_database} < /srv/www/#{LOCAL_ENV['VAGRANT_SITE_NAME']}/current/#{filename}'"
 end
